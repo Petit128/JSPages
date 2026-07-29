@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        .form-group { margin-bottom: 15px; }
+        .error { color: red; font-weight: bold; }
+        .success { color: green; font-weight: bold; }
+        input { padding: 5px; width: 200px; }
+        .menu { margin-top: 20px; }
+        .menu a { margin-right: 15px; color: #0066cc; }
+    </style>
+</head>
+<body>
+    <h2>Connexion</h2>
+    
+    <div id="message"></div>
+    
+    <form action="login" method="post">
+        <div class="form-group">
+            <label>Nom d'utilisateur:</label><br>
+            <input type="text" name="username" required>
+        </div>
+        <div class="form-group">
+            <label>Mot de passe:</label><br>
+            <input type="password" name="password" required>
+        </div>
+        <input type="submit" value="Se connecter">
+    </form>
+    
+    <div class="menu">
+        <a href="register.html">Créer un compte</a><br>
+        <a href="index.html">Retour au menu</a>
+    </div>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const messageDiv = document.getElementById('message');
+        
+        if (urlParams.has('error')) {
+            messageDiv.innerHTML = '<p class="error">Nom d\'utilisateur ou mot de passe incorrect</p>';
+        } else if (urlParams.has('registered')) {
+            messageDiv.innerHTML = '<p class="success">Inscription réussie ! Vous pouvez vous connecter.</p>';
+        } else if (urlParams.has('logout')) {
+            messageDiv.innerHTML = '<p class="success">Vous avez été déconnecté.</p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Équation du second degré</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        .form-group { margin-bottom: 15px; }
+        input { padding: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Résolution d'une équation du second degré</h2>
+    <form action="equation.jsp" method="post">
+        <div class="form-group">
+            <label>a : <input type="number" step="any" name="a" required></label>
+        </div>
+        <div class="form-group">
+            <label>b : <input type="number" step="any" name="b" required></label>
+        </div>
+        <div class="form-group">
+            <label>c : <input type="number" step="any" name="c" required></label>
+        </div>
+        <input type="submit" value="Résoudre">
+    </form>
+    <br>
+    <a href="index.html">Retour au menu</a>
+</body>
+</html>
